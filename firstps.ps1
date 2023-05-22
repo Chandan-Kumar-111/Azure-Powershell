@@ -4,6 +4,8 @@ $appname="mysiteapp$(Get-Random)"
 $res="myres"
 $loc= "Southeast Asia"
 $plan="appplan"
+$giturl="https://github.com/Chandan-Kumar-111/AzureTest.git"
+$gitproperty=@{repoUrl="$giturl";branch="master"; isManualIntegration="true";}
 
 #create Resource Group
 
@@ -19,5 +21,5 @@ New-AzWebApp -Name $appname -Location $loc -ResourceGroupName $res -AppServicePl
 
 #git configuration
 
-Set-AzResource -Properties gitproperty -ResourceGroupName $res -ResourceType Microsoft.Web/sites/sourcecontrols -ResourceName $appname/web -ApiVersion 2015-08-01 -Force
+Set-AzResource -Properties $gitproperty -ResourceGroupName $res -ResourceType Microsoft.Web/sites/sourcecontrols -ResourceName $appname/web -ApiVersion 2015-08-01 -Force
 
