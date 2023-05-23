@@ -9,7 +9,7 @@ $dbpwd="user12345678"
 $sqlcred= New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $dblogin , (ConvertTo-SecureString -String $dbpwd -AsPlainText -Force)
 $startIp=""
 $endIp=""
-#test git
+#test git.----
 
 #create DB server
 
